@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+
+	<ui:insert name="head" />
+</h:head>
+<h:body>
+
+	<h:outputStylesheet library="css" name="style.css" />
+
+
+	<div class="backgroundGray">
+		<div class="headerStyle">
+			The U.S. ARMY CMA
+			<div class="size12">ARIMS search</div>
+
+		</div>
+	</div>
+	
+	<p:outputPanel styleClass="mainBackgroundStyle">
+		<ui:insert name="content" />
+	</p:outputPanel>
+	
+</h:body>
+</html>
