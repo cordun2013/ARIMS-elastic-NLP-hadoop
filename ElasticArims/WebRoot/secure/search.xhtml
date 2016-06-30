@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:body>
+
+<ui:composition template="../main-template.xhtml">
+		<ui:define name="content">
+		<h:form id="search">
+		<p:focus/>
+				<p:panelGrid styleClass="searchTableStyle">
+				<p:messages id="messages"  autoUpdate="true" closable="false" />
+					<p:outputLabel style="font-size:15px;"
+					for="index" value="Index: "/>
+            <p:selectOneMenu id="index" value="#{searchUI.selectedIndex}" styleClass="dropDownStyle"  >
+             <p:ajax  process="@this" />
+                <f:selectItems value="#{searchUI.elasticIndices}" />
+            </p:selectOneMenu>
+					
+					<p:outputLabel style="font-size:15px;margin-left:200px;"
+						for="searchText" value="Search Term: " />
+					<p:inputText  id="searchText" size = "40" styleClass="searchInputStyle"
+						value="#{searchUI.searchText}" required="true" requiredMessage="Search term is required, cannot be empty">
+						<p:ajax event="keyup" listener="#{searchUI.executeSearch}" update="searchResultPanel" />
+						</p:inputText>					
+					<p:commandButton value="Search" styleClass="searchButtonStyle" 
+						action="#{searchUI.executeSearch}"  ajax="false"  escape="false">
+					</p:commandButton>
+
+					
+				</p:panelGrid>
+				<p:panel id="searchResultPanel" styleClass="panelStyle">
+					<p:dataTable var="fileObject" id="searchResultTable"
+						widgetVar="searchResultTable" value="#{searchUI.fileObjects}"						
+						stickyHeader="true" styleClass="searchOutputTable" >
+<!-- 						<p:column headerText="Document Name" width="150">
+							<p:commandLink action="#{searchUI.openDocument}" ajax="false"
+								value="#{fileObject.docNumber}" >
+										<f:setPropertyActionListener
+										value="#{fileObject.docNumber}"
+										target="#{searchUI.selectedName}" />
+							</p:commandLink>
+						</p:column> -->
+						<p:column headerText="Document Name" width="150">
+							<p:button  style="text-decoration: underline !important;" target="_blank" href="#{searchUI.selectedUrl}#{fileObject.docNumber}.pdf"
+								 value="#{fileObject.docNumber}" >
+										
+							</p:button>
+						</p:column>
+						<p:column headerText="Document Category" width="250">
+							<h:outputText
+								value="#{fileObject.category}">
+							</h:outputText>
+						</p:column>
+						<p:column headerText="Document Title" >
+							<h:outputText
+								value="#{fileObject.docTitle}">
+							</h:outputText>
+						</p:column>
+					</p:dataTable>
+					</p:panel>
+		</h:form>
+		</ui:define>
+</ui:composition>
+</h:body>
+</html>

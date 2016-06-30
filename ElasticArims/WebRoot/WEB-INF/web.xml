@@ -9,9 +9,40 @@
 		<servlet-name>Faces Servlet</servlet-name>
 		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
-	</servlet>
+	</servlet>	
+	
+	<listener>
+ <listener-class>
+  org.springframework.web.context.ContextLoaderListener
+</listener-class>
+</listener>
+ 
+<listener>
+ <listener-class>org.springframework.web.context.request.RequestContextListener </listener-class>
+</listener>    
+    
+<listener> 
+<listener-class>org.apache.myfaces.webapp.StartupServletContextListener</listener-class>
+</listener>    
+	
+	<!-- Login filter -->
+   <filter>
+       <filter-name>LoginFilter</filter-name>
+       <filter-class>com.arims.search.LoginFilter</filter-class>
+   </filter>
+   <!-- Set the login filter to secure all the pages in the /secured/* path of the application  -->
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <url-pattern>/secure/*</url-pattern>
+    </filter-mapping>
+	
+	 <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>/META-INF/applicationContext.xml</param-value>
+	</context-param>
+	
 	<welcome-file-list>
-		<welcome-file>search.xhtml</welcome-file>
+		<welcome-file>login.xhtml</welcome-file>
 	</welcome-file-list>
 	<servlet-mapping>
 		<servlet-name>Faces Servlet</servlet-name>

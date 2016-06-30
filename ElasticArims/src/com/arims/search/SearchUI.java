@@ -1,15 +1,34 @@
 package com.arims.search;
 
 import java.awt.Desktop;
+import java.awt.Window;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.net.ConnectException;
-import java.net.SocketException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.channels.Channels;
+import java.nio.channels.ReadableByteChannel;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
+
+import org.apache.commons.io.FileUtils;
+
+
+
+
+
+
+
+
 
 
 import java.util.List;
@@ -17,7 +36,6 @@ import java.util.ResourceBundle;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
@@ -27,9 +45,7 @@ import org.primefaces.json.JSONArray;
 import org.primefaces.json.JSONObject;
 
 import com.sun.jersey.api.client.Client;
-import com.sun.jersey.api.client.ClientHandlerException;
 import com.sun.jersey.api.client.ClientResponse;
-import com.sun.jersey.api.client.UniformInterfaceException;
 import com.sun.jersey.api.client.WebResource;
 
 
@@ -46,7 +62,7 @@ public class SearchUI {
 	private String selectedName;
 	private String selectedIndex;
 	ResourceBundle env = ResourceBundle.getBundle("local");
-	private static final int DEFAULT_BUFFER_SIZE = 10240; 
+	private static final int DEFAULT_BUFFER_SIZE = 10240; // 10KB.
 
 	 public String executeSearch() {
 		 
@@ -138,15 +154,18 @@ public class SearchUI {
 		return indexArray;
 	}
 	 
-	 public void openDocument() {
+	//Does not work for http URLs - 
+/*	 public void openDocument() throws IOException {
 
 		 FacesContext facesContext = FacesContext.getCurrentInstance();
 	        ExternalContext externalContext = facesContext.getExternalContext();
 	        HttpServletResponse response = (HttpServletResponse) externalContext.getResponse();
 	        String fileName = selectedName+".pdf";
 	        String file_location_path = env.getString("file_location_path");
-	        
-	        File file = new File(file_location_path,fileName);//"/Users/suthanchakkamadathil/Documents/ARMY_CMA_ARIMS_Project/ARIMS_Data/OriginalPDFs/", fileName);
+	        URL selectedUrl = new URL(file_location_path+fileName);
+	        String urlPath = selectedUrl.getPath();
+	        File file = new File(selectedUrl.getFile());//"/Users/suthanchakkamadathil/Documents/ARMY_CMA_ARIMS_Project/ARIMS_Data/OriginalPDFs/", fileName);
+	        //FileUtils.copyURLToFile(selectedUrl, file);
 	        BufferedInputStream input = null;
 	        BufferedOutputStream output = null;
 	        try {
@@ -179,10 +198,16 @@ public class SearchUI {
 
 	        facesContext.responseComplete();
 
-	    }
-	 public void openDocument_new(){
+	    }*/
+	
+	
+	/* public void openDocument_new() throws IOException{
+		 	String file_location_path = env.getString("file_location_path");
 	        String fileName = selectedName+".pdf";
-	        File file = new File("/Users/suthanchakkamadathil/Documents/ARMY_CMA_ARIMS_Project/ARIMS_Data/OriginalPDFs/", fileName);
+	        
+	        File file = null;
+	        FileUtils.copyURLToFile(selectedUrl, file);
+	        
 	        if (Desktop.isDesktopSupported()) {
 	            try {
 	                //File myFile = new File(file);
@@ -193,8 +218,10 @@ public class SearchUI {
 	            }
 	          
 	        }
-		 
-	 }
+	   }
+	        */
+	       
+
 	 
 	 	private static void close(Closeable resource) {
 	        if (resource != null) {
@@ -248,6 +275,12 @@ public class SearchUI {
 		public void setSelectedIndex(String selectedIndex) {
 			this.selectedIndex = selectedIndex;
 		}
+		
+		public String getSelectedUrl() {
+			return env.getString("file_location_path");
+		}
+
+		
 
 
 	

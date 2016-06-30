@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:body>
+
+<ui:composition template="main-template.xhtml">
+		<ui:define name="content">
+		<h:form id="login">
+		<p:focus/>
+				<p:panelGrid styleClass="searchTableStyle">
+				<p:messages id="messages"  autoUpdate="true" closable="false" />
+					<p:outputLabel style="font-size:15px;margin-left:200px;"
+						for="username" value="User Name: " />
+					<p:inputText  id="username" 
+						style="font-size:15px;"
+						value="#{loginUI.userName}" required="true" requiredMessage="User Name is required, cannot be empty"/>
+ 					<p:outputLabel value="Password: "  for = "password" style="font-size:15px;margin-left:20px;"/>
+        			<p:password id="password" value="#{loginUI.pwd}" required="true" autocomplete = "off" requiredMessage="Password is required, cannot be empty" />
+					<p:commandButton value="&lt;u&gt;L&lt;/u&gt;ogin" styleClass="searchButtonStyle" title="Use Shift+Alt+L to activate"
+						action="#{loginUI.validateUsernamePassword}" ajax="false" accesskey="L" escape="false">
+					</p:commandButton>
+				</p:panelGrid>
+		</h:form>
+		</ui:define>
+</ui:composition>
+</h:body>
+</html>

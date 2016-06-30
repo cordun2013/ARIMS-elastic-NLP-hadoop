@@ -21,13 +21,24 @@
 		<div class="headerStyle">
 			The U.S. ARMY CMA
 			<div class="size12">ARIMS search</div>
-
-		</div>
 	</div>
+		<p:panel rendered="#{not empty webstate.user}" styleClass="menuStyle">
+			<h:form id="logout">
+					
+					<div >
+						<p:outputLabel value="Hello #{webstate.user}" styleClass="marginRight30"/>
+						<p:commandLink action="#{loginUI.logout}" ajax="false"
+							accesskey="L"
+							title="Use Shift+Alt+L to activate in Firefox and Alt+L in Chrome and Alt+L and then Enter in IE ">
+							<p:outputLabel value="&lt;u&gt;L&lt;/u&gt;ogout" escape="false" />
+						</p:commandLink>
+					</div>
+				</h:form>
+			</p:panel>
 	
 	<p:outputPanel styleClass="mainBackgroundStyle">
 		<ui:insert name="content" />
 	</p:outputPanel>
-	
+	</div>
 </h:body>
 </html>

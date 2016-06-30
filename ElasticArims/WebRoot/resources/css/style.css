@@ -174,6 +174,10 @@ button:focus, button:hover{
 	margin-bottom:20px;
 }
 
+.marginRight30{
+	margin-right:30px;
+}
+
 .marginBottom100{
 	margin-bottom:100px;
 }
@@ -186,15 +190,13 @@ button:focus, button:hover{
 	background-color: rgb(199, 199, 200);
 	padding-bottom: 20px;
 	padding-top: 20px;
-	padding-left: 75px;
-	padding-right: 75px;
-	/*position: absolute;*/
-	overflow-y: auto;
 	top: 75px;
 	left: 0px;
 	right: 0px;
 	bottom: 0px;
 	font-size: 14px;
+	width:90%;
+	margin:auto;
 }
 
 .headerStyle {
@@ -203,14 +205,14 @@ button:focus, button:hover{
 	height: 60px;
 	background-color: #006751;
 	color: #FFF;
-	/*margin-bottom: 20px;*/
-	margin-left: 75px;
-	margin-right: 75px;
+
 	font-size: 35px;
 	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic,
 		"AppleGothic", sans-serif;
 	padding-top: 20px;
 	padding-bottom: 15px;
+		width:90%;
+	margin:auto;
 }
 
 .ui-widget .tableStyle {
@@ -264,11 +266,59 @@ padding:0px;
 	padding:0px;
 }
 
+
+
+
+
 /*
 									-------------------------------------------------
 														SEARCH STYLES
  									-------------------------------------------------
  */
+ 
+ 
+ .menuStyle {
+	font-size: 15px;
+	padding:0px;
+	width: 90%;
+	margin: auto;
+}
+
+.menuStyle .ui-widget-content a:focus  {
+   border: 1px solid white;
+}
+
+.menuStyle .ui-panel-content{
+	text-align: right;
+	color:white;
+	padding:4px;
+}
+
+.menuStyle .ui-widget-content{
+	background:  #006751 linear-gradient(rgba(255, 255, 255, 0.23), rgba(255, 255, 255, 0));
+}
+
+.menuStyle .ui-widget-content a {
+    color: white;
+}
+
+.searchOutputTable .ui-corner-all{
+	border-radius: 0px;
+	background:none;
+	
+}
+
+.searchOutputTable  .ui-widget-content .ui-state-default, .searchOutputTable  .ui-widget-content .ui-state-hover{
+	border:0px;
+	font-weight: normal;
+	box-shadow: none;
+}
+
+.searchOutputTable  .ui-widget .ui-widget{
+	font-weight:normal;
+}
+
+
  .searchFiledStyle {
 	margin-left: 75px;
 	margin-right: 75px;
@@ -332,11 +382,11 @@ padding:0px;
 }
 
 .dropDownStyle .ui-inputfield{
-	font-size:20px;
+	font-size:15px;
 }
 
 .ui-widget  .searchInputStyle {
-	font-size:20px;
+	font-size:15px;
 }
  .searchButtonStyle {
 	font-size: 16px;
@@ -347,7 +397,7 @@ padding:0px;
 	border: none;
 	box-shadow: none;
 	font-weight:normal;
-	padding: 4px;
+	padding: 1px;
 }
 
 .searchFieldHeaderStyle  .ui-state-focus,.searchFieldHeaderStyle .ui-state-hover {
@@ -381,7 +431,7 @@ padding:0px;
 }
 
 .ui-widget .ui-widget  .searchOutputTable {
-	font-size: 14px;
+	font-size: 12px;
 }
 
 .ui-widget .searchTableStyle {
@@ -394,11 +444,6 @@ padding:0px;
 
  
 
-/*
-									-------------------------------------------------
-														AFFINITY STYLES
- 									-------------------------------------------------
- */
  
 .tabStyle {
 	font-size: 14px;
@@ -448,11 +493,6 @@ padding:0px;
 }
 
 
-/*
-									-------------------------------------------------
-														MOTIVATION STYLES
- 									-------------------------------------------------
- */
 
 tr.border_bottom td {
   border-bottom:1pt solid #A8A8A8;
