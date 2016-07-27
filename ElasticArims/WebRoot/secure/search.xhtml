@@ -17,7 +17,7 @@
 				<p:panelGrid styleClass="searchTableStyle">
 				<p:messages id="messages"  autoUpdate="true" closable="false" />
 					<p:outputLabel style="font-size:15px;"
-					for="index" value="Index: "/>
+					for="index" value="Module: "/>
             <p:selectOneMenu id="index" value="#{searchUI.selectedIndex}" styleClass="dropDownStyle"  >
              <p:ajax  process="@this" />
                 <f:selectItems value="#{searchUI.elasticIndices}" />

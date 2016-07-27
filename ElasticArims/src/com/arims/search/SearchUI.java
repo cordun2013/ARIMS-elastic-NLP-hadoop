@@ -107,7 +107,7 @@ public class SearchUI {
 					FileObject fileObject = new FileObject();
 					fileObject.setDocNumber(source.getString("DocNumber"));
 					fileObject.setCategory(source.getString("Category"));
-					fileObject.setDocTitle(source.getString("DocTitle").substring(0, 25));
+					fileObject.setDocTitle(source.getString("DocTitle"));//.substring(0, 25));
 					
 					System.out.println("source" + source );
 					fileObjects.add(fileObject);
@@ -277,7 +277,14 @@ public class SearchUI {
 		}
 		
 		public String getSelectedUrl() {
-			return env.getString("file_location_path");
+			//return env.getString("file_location_path");
+			if (selectedIndex.startsWith("arims") ){
+				return env.getString("file_location_path");
+			} else if (selectedIndex.startsWith("dms") ){
+				return env.getString("file_location_path_dms");
+			} else {
+				return env.getString("file_location_path_dcs");
+			}
 		}
 
 		
