@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+
+	<ui:insert name="head" />
+</h:head>
+<h:body>
+
+	<h:outputStylesheet library="css" name="style.css" />
+
+
+	<div class="backgroundGray">
+		<div class="headerStyle">
+			The U.S. ARMY
+			<div class="menuStyle">ARIMS CLassify Prototype</div>
+	</div>
+		<p:panel rendered="#{not empty webstate.user}" styleClass="menuStyle">
+			<h:form id="logout">
+					
+					<div >
+						<p:outputLabel value="Hello #{webstate.user}" styleClass="marginRight30"/>
+						<p:commandLink action="#{loginUI.logout}" ajax="false"
+							accesskey="L"
+							title="Use Shift+Alt+L to activate in Firefox and Alt+L in Chrome and Alt+L and then Enter in IE ">
+							<p:outputLabel value="&lt;u&gt;L&lt;/u&gt;ogout" escape="false" />
+						</p:commandLink>
+					</div>
+				</h:form>
+			</p:panel>
+	
+	<p:outputPanel styleClass="mainBackgroundStyle">
+		<ui:insert name="content" />
+	</p:outputPanel>
+	</div>
+</h:body>
+</html>

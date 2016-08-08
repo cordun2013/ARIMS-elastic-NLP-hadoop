@@ -1,0 +1,542 @@
+@charset "utf-8";
+
+html,body {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	color: #000;
+	background: #fff;
+}
+
+/*
+											-------------------------------------------------
+											 			OVERRIDE PRIMEFACES STYLES  
+								 			-------------------------------------------------
+ */
+
+
+
+.ui-state-default a:link {
+	color: black;
+}
+
+.ui-widget-content {
+	color: black;
+}
+
+.ui-tabs .ui-tabs-nav li {
+	margin: 0px;
+}
+
+.ui-tabs.ui-tabs-top>.ui-tabs-nav {
+	padding: 1px;
+}
+
+.ui-widget-header,.ui-state-default a,.ui-state-default a:link,.ui-state-default
+	{
+	text-shadow: none;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected {
+	background-color: rgba(69, 208, 245, 0.23);
+}
+
+
+
+.jqplot-target {
+    color: black;
+}
+.jqplot-highlighter-tooltip{
+	font-size: 1em;
+}
+
+.ui-widget-content  .blue{
+	color:blue;
+}
+
+.ui-datatable .ui-sortable-column-icon {
+    background-image: url("../javax.faces.resource/images/ui-icons_ffffff_256x240.png.xhtml?ln=primefaces-aristo");
+}
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+
+    color: black;
+	background: none;
+}
+
+.ui-panelgrid .ui-panelgrid-cell {
+    border-width: 0px;
+    border-style: none;
+    padding: 10px 40px;
+}
+
+/*
+									-------------------------------------------------
+														COMMON STYLES
+ 									-------------------------------------------------
+ */
+ 
+ 
+ a {
+    text-decoration: none;
+}
+
+a .underline::first-letter{
+  text-decoration: underline;
+
+}
+
+.panelStyle a {
+  text-decoration: underline;
+
+}
+
+ input:focus {
+	background-color: #FCEE9F;
+}
+
+a:focus {
+   border: 1px solid #7096ab;
+}
+
+button:focus, button:hover{
+	background: transparent linear-gradient(#FFF, #006751) repeat scroll 0% 0%;
+	color:black;
+}
+
+ .size12 {
+ font-size: 12px;
+ }
+.ten-percent {
+	width: 10%;
+}
+
+.twenty-percent {
+	width: 20%;
+}
+
+.thirty-percent {
+	width: 30%;
+}
+
+.fourty-percent {
+	width: 40%;
+}
+
+.fifty-percent {
+	width: 50%;
+}
+
+.seventy-percent {
+	width: 70%;
+}
+
+.fifty-five-percent {
+	width: 55%;
+}
+
+.eighty-percent {
+	width: 80%;
+}
+
+.ninety-percent {
+	width: 90%;
+}
+
+.hundred-percent {
+	width: 100%;
+}
+
+.16px{
+	width:16px;
+}
+
+.150px{
+	width:150px;
+}
+
+.350px{
+	width:350px;
+}
+
+
+.noBorder {
+	border-width: 0px;
+}
+
+.bold{
+	font-weight:bold;
+}
+
+.blue{
+	color:blue;
+}
+
+.alignLeft{
+	text-align: left;
+	width:200px;
+}
+
+.alignRight{
+	text-align: Right;
+	width:200px;
+}
+
+.marginBottom20{
+	margin-bottom:20px;
+}
+
+.marginRight30{
+	margin-right:30px;
+}
+
+.marginBottom100{
+	margin-bottom:100px;
+}
+
+.backgroundGray{
+	background-color: rgb(199, 199, 200);
+}
+
+.mainBackgroundStyle {
+	background-color: rgb(199, 199, 200);
+	padding-bottom: 20px;
+	padding-top: 20px;
+	top: 75px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	font-size: 14px;
+	width:90%;
+	margin:auto;
+}
+
+.headerStyle {
+	text-align: center;
+	vertical-align: middle;
+	height: 60px;
+	background-color: #006751;
+	color: #FFF;
+
+	font-size: 35px;
+	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic,
+		"AppleGothic", sans-serif;
+	padding-top: 20px;
+	padding-bottom: 15px;
+		width:90%;
+	margin:auto;
+}
+
+.ui-widget .tableStyle {
+	font-size: 15px;
+	font-family: "Helvetica Neue", Arial, sans-serif ";
+	margin-top: 20px;
+	margin-bottom: 40px;
+	width: 100%;
+}
+
+.ui-panelgrid .ui-widget .tableStyle {
+	font-size: 14px;
+	padding: 5px;
+	margin-top: 20px;
+	margin-bottom: 40px;
+	width: 100%;
+}
+
+.fieldStyle .ui-state-default {
+	cursor: pointer;
+	padding: 0px 5px;
+	font-size: 15px;
+	color: #000;
+}
+
+.ui-widget-content .fieldStyle {
+	padding: 5px;
+	margin-bottom: 10px;
+	background-color: #DBE6F3;
+}
+
+ui-widget .scoreTableStyle {
+	font-size: 15px;
+	font-family: "Helvetica Neue", Arial, sans-serif ";
+	margin-top: 20px;
+	margin-left: 100px;
+	width: 80%;
+}
+
+.scoreTableStyle tbody td {
+	border-width: 0px;
+}
+
+.panelStyle{
+background-color: rgb(199, 199, 200);
+border: 0px none;
+padding:0px;
+}
+
+.panelStyle .ui-panel-content{
+	padding:0px;
+}
+
+
+
+
+
+/*
+									-------------------------------------------------
+														SEARCH STYLES
+ 									-------------------------------------------------
+ */
+ 
+ 
+ .menuStyle {
+	font-size: 15px;
+	padding:0px;
+	width: 90%;
+	margin: auto;
+}
+
+.menuStyle .ui-widget-content a:focus  {
+   border: 1px solid white;
+}
+
+.menuStyle .ui-panel-content{
+	text-align: right;
+	color:white;
+	padding:4px;
+}
+
+.menuStyle .ui-widget-content{
+	background:  #006751 linear-gradient(rgba(255, 255, 255, 0.23), rgba(255, 255, 255, 0));
+}
+
+.menuStyle .ui-widget-content a {
+    color: white;
+}
+
+.searchOutputTable .link{
+	border-radius: 0px;
+	background:none;
+	text-decoration: underline !important;
+}
+
+.searchOutputTable  .ui-widget-content .ui-state-default, .searchOutputTable  .ui-widget-content .ui-state-hover{
+	border:0px;
+	font-weight: normal;
+	box-shadow: none;
+}
+
+.searchOutputTable  .ui-widget .ui-widget{
+	font-weight:normal;
+}
+
+
+ .searchFiledStyle {
+	margin-left: 75px;
+	margin-right: 75px;
+}
+
+ .applicantSearchFiledStyle {
+	margin-left: 75px;
+	margin-right: 75px;
+	padding-top:35px;
+}
+
+.searchGrid{
+	font-size: 14px;
+	width:100%
+}
+
+.applicantPanel{
+	font-size: 14px;
+
+}
+.ui-widget-content .applicantPanel{
+		background-color: #FCEE9F;
+
+	}
+
+.searchFiledLeftStyle {
+	margin-bottom: 20px;
+	width: 45%;
+	float: left;
+}
+
+.searchFiledRightStyle {
+	margin-bottom: 20px;
+	width: 45%;
+	float: right;
+}
+
+.searchFieldHeaderStyle .ui-state-default {
+	padding: 0px 5px;
+	font-size: 14px;
+	color: #000;
+}
+ 
+
+.searchFieldHeaderStyle  .searchButtonStyle  {
+	font-size: 16px;
+	margin-left: 15px;
+	color: white;
+	background: rgb(22, 72, 129) linear-gradient(rgba(125,174,229,1) 0%,rgba(55,132,215,1) 0%,rgba(20,56,98,1) 98%,rgba(41,117,199,1) 100%,rgba(71,142,217,1) 100%) repeat scroll 0% 0%;
+	text-shadow: none;
+	border: none;
+	box-shadow: none;
+	font-weight:normal;
+}
+
+.dropDownStyle{
+	display:inline-block;
+	vertical-align:top;
+	width:120px;
+	
+}
+
+.dropDownStyle .ui-inputfield{
+	font-size:15px;
+}
+
+.ui-widget  .searchInputStyle {
+	font-size:15px;
+}
+ .searchButtonStyle {
+	font-size: 16px;
+	margin-left: 25px;
+	color: white;
+	background: rgb(55, 117, 102) linear-gradient(rgb(18, 48, 42) 0%,#006751 0%,rgb(20, 87, 98) 98%,rgb(40, 167, 167) 100%,rgb(35, 175, 180) 100%) repeat scroll 0% 0%;
+	text-shadow: none;
+	border: none;
+	box-shadow: none;
+	font-weight:normal;
+	padding: 1px;
+}
+
+.ui-panelgrid-cell .searchButtonStyle {
+	font-size: 16px;
+	margin-left: 25px;
+	color: white;
+	background: rgb(55, 117, 102) linear-gradient(rgb(18, 48, 42) 0%,#006751 0%,rgb(20, 87, 98) 98%,rgb(40, 167, 167) 100%,rgb(35, 175, 180) 100%) repeat scroll 0% 0%;
+	text-shadow: none;
+	border: none;
+	box-shadow: none;
+	font-weight:normal;
+	padding: 1px;
+}
+
+.searchFieldHeaderStyle  .ui-state-focus,.searchFieldHeaderStyle .ui-state-hover {
+	background:  transparent linear-gradient(#FFF, #65c3cd) repeat scroll 0% 0%;
+	color:black;
+}
+
+
+
+.searchOutputTable {
+	margin-top: 20px;
+	font-size: 14px;
+}
+
+.searchOutputTable .ui-datatable-header{
+	color:white;
+	background:  #164881 linear-gradient(rgba(255, 255, 255, 0.23), rgba(255, 255, 255, 0));
+}
+
+.searchOutputTable  tr:hover {
+	background-color: #FCEE9F;
+}
+
+.mainBackgroundStyle .ui-datatable thead th, .affinityPopupTable .ui-state-default{
+	background: transparent linear-gradient(#FFF, #CEF) repeat scroll 0% 0%;
+	outline: 0px none;
+	border: 1px solid #4DC4FF;
+	color: #339;
+	text-shadow: 0px -1px 2px rgba(255, 255, 255, 0.5);
+	font-size:14px;
+}
+
+.ui-widget .ui-widget  .searchOutputTable {
+	font-size: 12px;
+}
+
+.ui-widget .searchTableStyle {
+	font-size: 14px;
+	font-family: "Helvetica Neue", Arial, sans-serif;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+ 
+
+ 
+.tabStyle {
+	font-size: 14px;
+	padding: 5px;
+	margin-top: 20px;
+	margin-bottom: 40px;
+	width: 100%;
+}
+
+.tabStyleRed a:link {
+	color:red;
+}
+
+.rightTabStyle {
+	width: 49.5%;
+	float: right;
+}
+
+.maintabStyle{
+	width:600;
+	height:600px;
+}
+
+
+.searchOutputTable .ui-datatable thead th{
+    border: 1px solid #A8A8A8;
+    background: #006751 linear-gradient(rgba(255, 255, 255, 0.23), rgba(255, 255, 255, 0));
+    text-shadow: none;
+    color: white;
+}
+
+.ui-widget .ui-widget .subtableHeader {
+	background: transparent linear-gradient(#FFF, #CEF) repeat scroll 0% 0%;
+	outline: 0px none;
+	border: 1px solid #4DC4FF;
+	color: #339;
+	text-shadow: 0px -1px 2px rgba(255, 255, 255, 0.5);
+	font-weight: normal;
+	font-size:14px;
+	padding:2px;
+	margin:1px;
+}
+
+.subtableHeader  a {
+    color: #339;
+    font-weight: normal;
+}
+
+
+
+tr.border_bottom td {
+  border-bottom:1pt solid #A8A8A8;
+}
+
+.ui-datatable table .nonBorderInspectionSummary {
+	width: 98%;
+}
+
+.nonBorderInspectionSummary  tr:hover {
+	background-color: #FCEE9F;
+}
+
+ .summaryMeasuresGrid{
+ 	font-size:15px;
+ 	height: 200px;
+ }
+
+
+
+
+
+
